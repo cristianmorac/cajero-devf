@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container-cajero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid red;
+  height: 100vh;
+}
+
+#cajero-login {
+  background: blue;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#transacciones button {
+  padding: 2px;
+}
+
+.disabled {
+  display: none;
+}
+
+#saldo {
+  background: #f1f1f1;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+#cuenta-movimientos {
+  /* background: #f1f1f1; */
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  max-width: 100%;
+  margin-right: 20px;
+
+}
+
+.cuenta-Ahorros,
+.cuenta-total {
+  display: flex;
+  gap: 5px;
+  padding: 0 10px;
+  height: max-content;
+  border-radius: 5px;
+}
+
+.cuenta-total {
+  background: #fff;
+  width: 270px;
+  align-items: center;
+}
+
+.cuenta-total span {
+  font-size: 50px;
+}
+
+.cuenta-total p {
+  /*  padding-top: 10px; */
+  margin-bottom: 0;
+}
+
+.cuenta-Ahorros {
+  background: #00b3fc;
+  color: #fff;
+  flex-direction: column;
+}
+
+.movimientos {
+  border-radius: 5px;
+}
+
+.movimiento-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.table {
+  margin-top: 10px;
+
+}
+
+.movimiento-saldo .table th {
+  font-size: 10px;
+  text-align: center;
+  width: 500px;
+}
+
+.movimiento-saldo .table tr,
+.movimiento-title tr {
+  text-align: center;
+}
+
+.movimiento-title table thead {
+  background: rgb(190, 190, 190);
+}
+
+.movimiento-title {
+  background: #fff;
+  padding: 5px;
+}
+
+.movimiento-title span {
+  font-weight: bold;
+}
