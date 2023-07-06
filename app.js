@@ -51,6 +51,8 @@ const addCuentas = (userValid, passValid) => {
             nameText = `Hola, ${userValid}`
             modText(nameText, 'h1');
             localStorage.setItem('user', JSON.stringify(cuenta))
+            // visible transacciones
+            removClass('transacciones', 'disabled')
         }
     });
 }
@@ -87,18 +89,16 @@ document.addEventListener('click', function (e) {
         // Validar inicio de sesión
         addCuentas(user, pass)
 
-        // visible transacciones
-        removClass('transacciones', 'disabled')
-
         // Mostrar saldo
         addSaled('addSale', 'saldoTotal', userLogin)
 
     }
     if (numberAccount === 'Consultar Saldo') {
         modText('Saldo', 'h2');
+        // remover disable
         removClass('saldo', 'disabled')
-        addClass('retiro');
-        addClass('ingreso');
+        addClass('retiro')
+        addClass('ingreso')
     }
 
     if (numberAccount === 'Retirar monto') {
@@ -113,6 +113,7 @@ document.addEventListener('click', function (e) {
         let ingreso = 'ingreso'
         modText(ingreso, 'h2');
         removClass(ingreso, 'disabled')
+        modText('Saldo', 'h2');
         addClass('saldo');
         addClass('retiro');
     }
@@ -126,6 +127,8 @@ document.addEventListener('click', function (e) {
                 console.log(userLogin);
                 localStorage.setItem('user', JSON.stringify(userLogin))
                 addSaled('addSale', 'saldoTotal', userLogin)
+                removClass('saldo', 'disabled')
+                addClass('ingreso');
             }
         }
     }
@@ -139,6 +142,9 @@ document.addEventListener('click', function (e) {
                 console.log(userLogin);
                 localStorage.setItem('user', JSON.stringify(userLogin))
                 addSaled('addSale', 'saldoTotal', userLogin)
+                modText('Saldo', 'h2');
+                removClass('saldo', 'disabled')
+                addClass('retiro');
             }
         }
     }
